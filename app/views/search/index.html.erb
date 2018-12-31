@@ -1,0 +1,11 @@
+<h2>Search Results</h2><br>
+<div class="result">
+  Name: <%= @search.name %><br>
+  Height: <%= @search.height %><br>
+  Mass: <%= @search.mass %><br>
+  Birth Year: <%= @search.birth_year %><br>
+  Gender: <%= @search.gender %><br>
+  Species: <% @search.species.each do |spec| %>
+    <%= spec[:name] %> <br>
+  <% end %>
+</div>
