@@ -26,11 +26,11 @@ class Search
 
   def returned
     @service = SwapiService.new(@q)
-    @returned ||= @service.results
+    @service.results
   end
 
   def species
-    species_list = returned[:species].map do |spec|
+    returned[:species].map do |spec|
       @service.get_species(spec)
     end
   end

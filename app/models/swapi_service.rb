@@ -11,12 +11,12 @@ class SwapiService
 
  def get_json
    @response ||= Faraday.get("https://swapi.co/api/people/?search=#{@q}")
-   @get_json ||= JSON.parse(@response.body, symbolize_names: true)[:results][0]
+   JSON.parse(@response.body, symbolize_names: true)[:results][0]
  end
 
  def get_species(url)
    @species_response ||= Faraday.get(url)
-   @get_species ||= JSON.parse(@species_response.body, symbolize_names: true)
+   JSON.parse(@species_response.body, symbolize_names: true)
  end
 
 end
